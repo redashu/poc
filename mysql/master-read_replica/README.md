@@ -20,3 +20,9 @@
 
 <img src="mastersl.png">
 
+### Installation & configuration -- mysql / mariadb -- both are same 
+
+## THings to perform on Master System 
+
+## Things to perform on Slave systems
+
