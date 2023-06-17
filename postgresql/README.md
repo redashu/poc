@@ -64,6 +64,49 @@ Available help:
   ALTER COLLATION                  CLUSTER                          CREATE VIEW                      DROP USER
 ```
 
+## setting  password for postgres user
+
+```
+postgres=# alter user postgres with password 'Redhat@1234';
+ALTER ROLE
+
+```
+
+### creating some new user 
+
+```
+[postgres@ip-172-31-27-51 ~]$ psql 
+psql (13.10)
+Type "help" for help.
+
+postgres=# 
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ ashu      |                                                            | {}
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+
+postgres=# 
+postgres=# 
+postgres=# create user  mack with password 'okGoogle' Create db ;
+ERROR:  syntax error at or near "Create"
+LINE 1: create user  mack with password 'okGoogle' Create db ;
+                                                   ^
+postgres=# create user  mack with password 'okGoogle'  CREATEDB CREATEROLE ;
+CREATE ROLE
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ ashu      |                                                            | {}
+ mack      | Create role, Create DB                                     | {}
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+
+
+```
+
+
 ### listing of databases
 
 ```
