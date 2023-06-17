@@ -238,3 +238,16 @@ helloc=# select email from emp where id=2;
 
 ```
 
+## setup pgadmin 
+
+```
+ 66  subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
+   67  dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+   68  dnf install -y https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-redhat-repo-2-1.noarch.rpm
+   69  dnf makecache
+   70  yum install pgadmin4
+   71  systemctl start httpd
+   72  /usr/pgadmin4/bin/setup-web.sh 
+```
+
+
