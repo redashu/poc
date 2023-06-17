@@ -22,14 +22,14 @@
 
 ## Indexing 
 
-<i>
+<p>
 Identify the columns: Determine which columns are frequently used in your queries and would benefit from indexing. These are typically columns involved in JOINs, WHERE clauses, and ORDER BY or GROUP BY operations.
-</i>
-<i>
+</p>
+<p>
 Choose the index type: MySQL supports several index types, including B-tree, Hash, and Full-Text indexes. B-tree indexes are the most commonly used type and suitable for most scenarios. Select the appropriate index type based on the data characteristics and query requirements.
-</i>
-<i>
+</p>
+<p>
 Create the index: You can create indexes using the CREATE INDEX statement or by adding the INDEX keyword when creating or altering a table.
 
 Here's an example of creating an index using the CREATE INDEX statement:
-</i>
+</p>
