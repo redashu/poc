@@ -46,4 +46,152 @@ Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service â
       Tasks: 8 (limit: 4421)
 ```
 
+# PSQL query 
+
+### help 
+
+```
+[root@ip-172-31-27-51 ~]# su - postgres 
+Last login: Fri Jun 16 02:52:32 UTC 2023 on pts/0
+[postgres@ip-172-31-27-51 ~]$ psql 
+psql (13.10)
+Type "help" for help.
+
+postgres=# \h
+Available help:
+  ABORT                            CHECKPOINT                       CREATE USER                      DROP TRIGGER
+  ALTER AGGREGATE                  CLOSE                            CREATE USER MAPPING              DROP TYPE
+  ALTER COLLATION                  CLUSTER                          CREATE VIEW                      DROP USER
+```
+
+### listing of databases
+
+```
+postgres=# \l
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+-----------+----------+----------+-------------+-------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(3 rows)
+
+```
+
+### creating database 
+
+```
+postgres=# create database helloc;
+CREATE DATABASE
+postgres=# \l
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+-----------+----------+----------+-------------+-------------+-----------------------
+ helloc    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+
+```
+
+### create table 
+
+```
+postgres=# \c helloc;
+You are now connected to database "helloc" as user "postgres".
+
+helloc=# create table emp (
+helloc(# id serial primary key,
+helloc(# name varchar(30) not null,
+helloc(# email char(50) not null,
+helloc(# remarks varchar(50)
+helloc(# );
+CREATE TABLE
+helloc=# 
+
+
+```
+
+### listing table 
+
+```
+helloc=# \dt
+        List of relations
+ Schema | Name | Type  |  Owner   
+--------+------+-------+----------
+ public | emp  | table | postgres
+(1 row)
+
+```
+
+### OR we can list it 
+
+```
+helloc=# \d
+             List of relations
+ Schema |    Name    |   Type   |  Owner   
+--------+------------+----------+----------
+ public | emp        | table    | postgres
+ public | emp_id_seq | sequence | postgres
+(2 rows)
+
+
+```
+
+## Note: in above you seel one extra table of id field -- 
+
+#### when you use serial indexing this is for auto_increment which got created
+
+### Inserting data into table
+
+```
+helloc=# INSERT INTO emp (name,  email)
+VALUES
+  ('John Doe', 'john.doe@example.com'),
+  ('Jane Smith', 'jane.smith@example.com');
+INSERT 0 2
+helloc=# 
+
+```
+
+### how to describe table
+
+```
+helloc=# \d emp;
+                                    Table "public.emp"
+ Column  |         Type          | Collation | Nullable |             Default             
+---------+-----------------------+-----------+----------+---------------------------------
+ id      | integer               |           | not null | nextval('emp_id_seq'::regclass)
+ name    | character varying(30) |           | not null | 
+ email   | character(50)         |           | not null | 
+ remarks | character varying(50) |           |          | 
+Indexes:
+    "emp_pkey" PRIMARY KEY, btree (id)
+
+```
+
+### printing some info 
+
+```
+ helloc=# select  * from emp;
+ id |    name    |                       email                        | remarks 
+----+------------+----------------------------------------------------+---------
+  1 | John Doe   | john.doe@example.com                               | 
+  2 | Jane Smith | jane.smith@example.com                             | 
+(2 rows)
+
+helloc=# select id,email from emp;
+ id |                       email                        
+----+----------------------------------------------------
+  1 | john.doe@example.com                              
+  2 | jane.smith@example.com                            
+(2 rows)
+
+helloc=# select email from emp where id=2;
+                       email                        
+----------------------------------------------------
+ jane.smith@example.com                            
+(1 row)
+
+```
 
