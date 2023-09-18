@@ -56,3 +56,8 @@ pcs cluster setup mycluster node1.example.com  node2.example.com  node3.example.
 pcs cluster enable --all
 ```
 
+## Creating Resources and Resource groups 
+
+### Filesystem resource creationn 
+
+
