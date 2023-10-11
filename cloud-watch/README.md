@@ -29,3 +29,11 @@
 /opt/aws/amazon-cloudwatch-agent/doc/amazon-cloudwatch-agent-schema.json
 ```
 
+### creting configfile
+
+```
+  /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+   
+   59  /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json 
+
+```
