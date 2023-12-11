@@ -55,3 +55,33 @@ ConsoleApp1  ConsoleApp1.sln  firstwebapp
 appsettings.Development.json  appsettings.json  AspNetCoreDemo.csproj  obj  Pages  Program.cs  Properties  wwwroot
 [ashu@ip-172-31-63-158 firstwebapp]$ 
 ```
+
+### publish code to a directory so that we can host with some web server
+
+```
+ ls
+appsettings.Development.json  AspNetCoreDemo.csproj  obj    Program.cs  wwwroot
+appsettings.json              bin                    Pages  Properties
+
+
+[ashu@ip-172-31-63-158 firstwebapp]$ dotnet publish
+MSBuild version 17.8.3+195e7f5a3 for .NET
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  AspNetCoreDemo -> /home/ashu/code/firstwebapp/bin/Release/net8.0/AspNetCoreDemo.dll
+  AspNetCoreDemo -> /home/ashu/code/firstwebapp/bin/Release/net8.0/publish/
+
+
+====>copy code to new directory
+
+mkdir ~/var
+[ashu@ip-172-31-63-158 firstwebapp]$ cp -arfv bin/Release/net8.0/publish/ ~/var/firstproject
+
+
+```
+
+### lets run dll file 
+
+```
+dotnet  AspNetCoreDemo.dll --urls=http://0.0.0.0:5001
+```
