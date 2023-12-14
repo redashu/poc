@@ -108,3 +108,46 @@ Watch mode enabled. Watching for file changes...
   ➜  Network: http://172.31.63.158:4200/
 
 ```
+
+### we can build angular app which will be creating dist folder to deploy 
+
+```
+ng build 
+? Would you like to share pseudonymous usage data about this project with the Angular Team
+at Google under Google's Privacy Policy at https://policies.google.com/privacy. For more
+details and how to change this setting, see https://angular.io/analytics. Yes
+
+Thank you for sharing pseudonymous usage data. Should you change your mind, the following
+command will disable this feature entirely:
+
+    ng analytics disable
+
+Global setting: enabled
+Local setting: enabled
+Effective status: enabled
+
+Initial Chunk Files   | Names         |  Raw Size | Estimated Transfer Size
+main-YJWPQ75W.js      | main          | 192.67 kB |                52.96 kB
+polyfills-LZBJRJJE.js | polyfills     |  32.69 kB |                10.59 kB
+styles-5INURTSO.css   | styles        |   0 bytes |                 0 bytes
+
+                      | Initial Total | 225.36 kB |                63.55 kB
+
+Application bundle generation complete. [9.800 seconds]
+[root@ip-172-31-63-158 ok]# ls
+angular.json  dist  node_modules  package.json  package-lock.json  README.md  src  tsconfig.app.json  tsconfig.json  tsconfig.spec.json
+[root@ip-172-31-63-158 ok]# cd dist/
+[root@ip-172-31-63-158 dist]# ls
+ok
+[root@ip-172-31-63-158 dist]# cd ok/
+[root@ip-172-31-63-158 ok]# ls
+3rdpartylicenses.txt  browser
+[root@ip-172-31-63-158 ok]# ls browser/
+favicon.ico  index.html  main-YJWPQ75W.js  polyfills-LZBJRJJE.js  styles-5INURTSO.css
+[root@ip-172-31-63-158 ok]# 
+
+```
+
+### Note: you can deploy browser folder to httpd or nginx 
+
+
