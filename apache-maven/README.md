@@ -168,3 +168,37 @@ Tomcat started.
 
 We must update the Tomcat User XML file, <b> /opt/tomcat/conf/tomcat-users.xml, </b> to create the users and set their roles. Don’t forget to take the backup of the current file. You can execute the following command to take the backup: 
 </p>
+
+### setup 
+
+```
+sudo cp /opt/tomcat/conf/{tomcat-users.xml,tomcat-users.xml.bak}
+sudo vim /opt/tomcat/conf/tomcat-users.xml
+
+====> add given lines 
+<role rolename="admin"/>
+<role rolename="admin-gui"/>
+<role rolename="manager"/>
+<role rolename="manager-gui"/>
+<user username="tomcat-admin" password="strongpassword" roles="admin,admin-gui,manager,manager-gui"/>
+```
+
+### Now allow managers to be accessible from outside 127.0.0.1
+
+<p>
+Then, comment out the following block of text in the Manager Context XML file <b> (/opt/tomcat/webapps/manager/META-INF/context.xml) and Host Manager Context XML file (/opt/tomcat/webapps/host-manager/META-INF/context.xml): </b>
+</p>
+
+### comment below kind of line both files
+
+```
+<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+
+```
+
+### now it will look like 
+
+```
+<!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+
+```
