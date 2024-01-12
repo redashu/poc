@@ -166,5 +166,5 @@ Tomcat started.
 
 <p> You will only have access to the Tomcat default page by default. You must configure the admin and administrator user accounts to access admin and other parts such as Server Status, App Manager, and Host Manager. The two manager apps referenced in the next sections must be configured per our requirements.
 
-We must update the Tomcat User XML file, /opt/tomcat/conf/tomcat-users.xml, to create the users and set their roles. Don’t forget to take the backup of the current file. You can execute the following command to take the backup: 
+We must update the Tomcat User XML file, <b> /opt/tomcat/conf/tomcat-users.xml, </b> to create the users and set their roles. Don’t forget to take the backup of the current file. You can execute the following command to take the backup: 
 </p>
