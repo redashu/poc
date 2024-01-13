@@ -202,3 +202,45 @@ Then, comment out the following block of text in the Manager Context XML file <b
 <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
 
 ```
+# MAVEN -- Again 
+
+### Creating a new project from command line
+
+```
+ mvn archetype:generate -DgroupId=com.example -DartifactId=mywebapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
+
+### below structure got created 
+
+```
+[ec2-user@ip-172-31-61-69 learning]$ tree 
+.
+`-- demo
+    |-- pom.xml
+    |-- src
+    |   |-- main
+    |   |   `-- java
+    |   |       `-- com
+    |   |           `-- example
+    |   |               `-- App.java
+    |   `-- test
+    |       `-- java
+    |           `-- com
+    |               `-- example
+    |                   `-- AppTest.java
+    `-- target
+        |-- classes
+        |   `-- com
+        |       `-- example
+        |           `-- App.class
+        `-- test-classes
+            `-- com
+                `-- example
+                    `-- AppTest.class
+
+17 directories, 5 files
+
+```
+
+
+
