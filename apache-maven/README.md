@@ -316,3 +316,20 @@ Hello World!
 [ec2-user@ip-172-31-61-69 demo]$ 
 
 ```
+
+### MVN project architecture 
+
+<img src="mvn-arch.png">
+
+
+### MVN install -- lifecycle 
+
+<img src="mvninstall.png">
+
+### Default repo URL 
+
+```
+https://repo.maven.apache.org/maven2/
+```
+
+
