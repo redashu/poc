@@ -242,5 +242,77 @@ Then, comment out the following block of text in the Manager Context XML file <b
 
 ```
 
+### MVN INStall --  
 
 
+#### When you run mvn install, Maven executes the following phases of the build lifecycle:
+
+### validate: 
+	-: Validate the project is correct and all necessary information is available.
+
+### compile: 
+	-: Compile the source code of the project.
+
+### test: 
+	-: Test compiled source code using appropriate testing frameworks.
+
+### package: 
+	:- Take the compiled code and package it in its distributable format, such as a JAR.
+
+### install: 
+	-: Install the package into the local repository for use as a dependency in other projects locally.
+
+```
+[ec2-user@ip-172-31-61-69 learning]$ cd demo/
+[ec2-user@ip-172-31-61-69 demo]$ ls
+pom.xml  src  target
+[ec2-user@ip-172-31-61-69 demo]$ mvn install 
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building demo 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+
+
+===>>
+]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s - in com.example.AppTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+
+===>>
+[INFO] Installing /home/ec2-user/learning/demo/pom.xml to /home/ec2-user/.m2/repository/com/example/demo/1.0-SNAPSHOT/demo-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.733s
+[INFO] Finished at: Sat Jan 13 11:00:18 UTC 2024
+[INFO] Final Memory: 15M/54M
+
+```
+
+### It generate jar file in target folder 
+
+```
+[ec2-user@ip-172-31-61-69 demo]$ ls
+pom.xml  src  target
+[ec2-user@ip-172-31-61-69 demo]$ 
+[ec2-user@ip-172-31-61-69 demo]$ ls target/
+classes  demo-1.0-SNAPSHOT.jar  generated-sources  generated-test-sources  maven-archiver  maven-status  surefire-reports  test-classes
+[ec2-user@ip-172-31-61-69 demo]$ 
+
+```
+
+### to RUN jar file 
+
+```
+java -cp target/demo-1.0-SNAPSHOT.jar  com.example.App
+Hello World!
+[ec2-user@ip-172-31-61-69 demo]$ 
+
+```
