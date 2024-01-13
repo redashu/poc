@@ -332,4 +332,18 @@ Hello World!
 https://repo.maven.apache.org/maven2/
 ```
 
+### Note: When we install -- mvn install it pull the dependency in from official repo and put it in local repo for cache
+
+### Local of local repo is 
+
+```
+[ec2-user@ip-172-31-61-69 ~]$ ls -a
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .cache  .m2  .redhat  .ssh  .viminfo  .vscode-server  learning
+[ec2-user@ip-172-31-61-69 ~]$ cd .m2/
+[ec2-user@ip-172-31-61-69 .m2]$ ls
+repository
+[ec2-user@ip-172-31-61-69 .m2]$ 
+
+
+```
 
