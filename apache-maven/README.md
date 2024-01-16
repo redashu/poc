@@ -347,3 +347,18 @@ repository
 
 ```
 
+### Creating a mvn webapp project 
+
+```
+mvn archetype:generate -DgroupId=com.example -DartifactId=my-spring-app -DarchetypeArtifactId=maven-archetype-webapp -DarchetypeGroupId=org.apache.maven.archetypes -DinteractiveMode=false
+[INFO] Scanning for projects...
+[INFO]                                         
+```
+
+### Verify 
+
+```
+[root@ashu-linux my-spring-app]# ls
+pom.xml  src
+
+```
