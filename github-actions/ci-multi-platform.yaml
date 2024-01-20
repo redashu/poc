@@ -1,0 +1,22 @@
+name: Docker Image CI
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+jobs:
+  build:
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest,windows-latest,macOS-latest]
+    steps:
+    - name: default action in github action official which check repo
+      uses: actions/checkout@v3
+    - name: just single command 
+      run: cal 
+    - name: we can run multiple commands 
+      run: |
+        date
+        echo $GITHUB_REF
+        echo $TAG
