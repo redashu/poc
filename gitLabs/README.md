@@ -1,6 +1,16 @@
 ## GitLab -- One of the most popular CICD tool
 
+
 <img src="gitlab1.png">
+
+### Note: -- 
+
+<p> By Default gitlab offer shared runners where our job can run </p>
+
+### Gitlab runners options 
+
+<img src="gitlab2.png">
+
 
 ## Gitlab pipeline 
 
