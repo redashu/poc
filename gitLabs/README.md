@@ -101,3 +101,45 @@ deploy-job:      # This job runs in the deploy stage.
    <li> .post </li> --- >  <i> always gonna run in the Last  </i>
 </ol>
 
+
+## Example of Nodejs based application 
+
+### ci.yaml
+
+```
+build:
+    stage: build
+    script:
+        - apt update -y
+        - apt install npm -y 
+        - npm install 
+deploy:
+    stage: deploy
+    script:
+        - apt update -y 
+        - apt install nodejs -y 
+        - node index.js  >/dev/null 2>&1  & 
+
+```
+
+### what if we use node based docker image in runner environment 
+
+```
+stages:
+    - build
+    - deploy
+image: node  # global place to define image 
+
+build:
+    stage: build
+   # image: node
+    script:
+        - npm install 
+deploy:
+   # image: node
+    stage: deploy
+    script:
+        - node index.js  >/dev/null 2>&1  & 
+
+```
+
