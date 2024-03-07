@@ -1,0 +1,13 @@
+### Introduction to Runners 
+
+## choosing windows runners 
+
+```
+tags:  # using tags keyword we can refer specific runners
+  - windows 
+first-job:
+  script:
+    - systeminfo 
+```
+
+
