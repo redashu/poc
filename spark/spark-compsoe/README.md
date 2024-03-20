@@ -41,3 +41,27 @@
 | `SPARK_DAEMON_USER`      | Spark system user.                     | `spark`                                 |
 | `SPARK_DAEMON_GROUP`     | Spark system group.                    | `spark`                                 |
 
+
+
+### Security
+
+The Bitnani Apache Spark docker image supports enabling RPC authentication, RPC encryption and local storage encryption easily using the following env vars in all the nodes of the cluster.
+
+```diff
++ SPARK_RPC_AUTHENTICATION_ENABLED=yes
++ SPARK_RPC_AUTHENTICATION_SECRET=RPC_AUTHENTICATION_SECRET
++ SPARK_RPC_ENCRYPTION=yes
++ SPARK_LOCAL_STORAGE_ENCRYPTION=yes
+```
+
+### enable SSL 
+
+```
++ SPARK_SSL_ENABLED=yes
++ SPARK_SSL_KEY_PASSWORD=KEY_PASSWORD
++ SPARK_SSL_KEYSTORE_PASSWORD=KEYSTORE_PASSWORD
++ SPARK_SSL_TRUSTSTORE_PASSWORD=TRUSTSTORE_PASSWORD
++ SPARK_SSL_NEED_CLIENT_AUTH=yes
++ SPARK_SSL_PROTOCOL=TLSv1.2
+
+```
