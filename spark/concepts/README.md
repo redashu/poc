@@ -2,6 +2,39 @@
 
 ### space Left with Intention -- for future updates 
 
+### Spark Usage 
+
+<img src="usage.png">
+
+### Reading data from Sources 
+
+<img src="hdd1.png">
+
+## RDD -- (Resilient Distributed Dataset)-- Resilient -- (having power to recover itself)
+
+<p> RDD's are Immutable </p>
+
+# Transformation & Action 
+
+## Transformation 
+### making another RDD from One RDD is trasformation -- like Scala based example given below 
+
+```
+val  x1 = sc.textFile("hdfs://....") # RDD 1
+val y1  = x1.flatMap(...)
+val z1 = y1.distinct(...)
+```
+
+## Action 
+
+### the real state where things are getting started with execution process -- Before that it will only create structure (DAG)
+
+<p> Extending the same Example </p>
+
+```
+z1.collect() 
+```
+
 ## apache spark architecture 
 
 <img src="spark_arch.png">
