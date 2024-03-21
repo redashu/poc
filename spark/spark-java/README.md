@@ -17,5 +17,11 @@
 ### now submit to spark master 
 
 ```
-spark-submit  --class BasicDataFrame  --master "local[*]"  BasicDataFrame.jar
+spark-submit  --class BasicDataFrame    BasicDataFrame.jar
+```
+
+### incase you want to override master details then 
+
+```
+spark-submit  --class BasicDataFrame --master "local[*]"   BasicDataFrame.jar
 ```
