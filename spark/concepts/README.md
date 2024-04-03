@@ -97,3 +97,8 @@ In cluster-client mode:
 
 These deploy-mode options provide flexibility in how Spark applications are deployed and executed, allowing you to choose the mode that best fits your requirements based on factors such as resource utilization, debugging capabilities, and production deployment needs.
 
+
+
+### Deep Internal process of running jobs in spark 
+
+<img src="sparkjob.png">
