@@ -38,25 +38,27 @@
 
 ## A generic list of  methods in transformation 
 
-Narrow Transformations:
+**Narrow Transformations:**
 
-map(func): Applies a function to each element in the RDD and returns a new RDD with the results.
-filter(func): Applies a predicate function to each element in the RDD and returns a new RDD containing only the elements that satisfy the predicate.
-flatMap(func): Similar to map, but each input item can be mapped to 0 or more output items (a sequence).
-mapPartitions(func): Similar to map, but runs separately on each partition of the RDD.
-mapPartitionsWithIndex(func): Similar to mapPartitions, but also provides the index of the partition.
-flatMapPartitions(func): Similar to flatMap, but runs separately on each partition of the RDD.
-sample(withReplacement, fraction, seed): Samples a fraction of data from the RDD with or without replacement.
-mapValues(func): Applies a function to the values of each key-value pair in a PairRDD, while retaining the original keys.
-flatMapValues(func): Similar to flatMap, but operates on key-value pairs and can produce 0 or more output pairs for each input pair.
-Wide Transformations:
+1. `map(func)`: Applies a function to each element in the RDD and returns a new RDD with the results.
+2. `filter(func)`: Applies a predicate function to each element in the RDD and returns a new RDD containing only the elements that satisfy the predicate.
+3. `flatMap(func)`: Similar to map, but each input item can be mapped to 0 or more output items (a sequence).
+4. `mapPartitions(func)`: Similar to map, but runs separately on each partition of the RDD.
+5. `mapPartitionsWithIndex(func)`: Similar to mapPartitions, but also provides the index of the partition.
+6. `flatMapPartitions(func)`: Similar to flatMap, but runs separately on each partition of the RDD.
+7. `sample(withReplacement, fraction, seed)`: Samples a fraction of data from the RDD with or without replacement.
+8. `mapValues(func)`: Applies a function to the values of each key-value pair in a PairRDD, while retaining the original keys.
+9. `flatMapValues(func)`: Similar to flatMap, but operates on key-value pairs and can produce 0 or more output pairs for each input pair.
 
-groupByKey(): Groups the values of each key in a PairRDD into a single sequence.
-reduceByKey(func): Aggregates the values of each key using a specified function.
-combineByKey(createCombiner, mergeValue, mergeCombiners): Similar to reduceByKey, but allows for more flexibility in the output format.
-foldByKey(zeroValue, func): Similar to reduceByKey, but with an additional initial zero value.
-aggregateByKey(zeroValue, seqFunc, combFunc): Similar to combineByKey, but with the ability to specify separate aggregation functions for combining values within a partition and across partitions.
-sortByKey(ascending): Sorts the elements of a PairRDD by key.
+**Wide Transformations:**
+
+1. `groupByKey()`: Groups the values of each key in a PairRDD into a single sequence.
+2. `reduceByKey(func)`: Aggregates the values of each key using a specified function.
+3. `combineByKey(createCombiner, mergeValue, mergeCombiners)`: Similar to reduceByKey, but allows for more flexibility in the output format.
+4. `foldByKey(zeroValue, func)`: Similar to reduceByKey, but with an additional initial zero value.
+5. `aggregateByKey(zeroValue, seqFunc, combFunc)`: Similar to combineByKey, but with the ability to specify separate aggregation functions for combining values within a partition and across partitions.
+6. `sortByKey(ascending)`: Sorts the elements of a PairRDD by key.
+
 
 ## Now Popular spark context (sc) operations 
 
