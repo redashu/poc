@@ -36,6 +36,28 @@
 
 <img src="wide.png">
 
+## A generic list of  methods in transformation 
+
+Narrow Transformations:
+
+map(func): Applies a function to each element in the RDD and returns a new RDD with the results.
+filter(func): Applies a predicate function to each element in the RDD and returns a new RDD containing only the elements that satisfy the predicate.
+flatMap(func): Similar to map, but each input item can be mapped to 0 or more output items (a sequence).
+mapPartitions(func): Similar to map, but runs separately on each partition of the RDD.
+mapPartitionsWithIndex(func): Similar to mapPartitions, but also provides the index of the partition.
+flatMapPartitions(func): Similar to flatMap, but runs separately on each partition of the RDD.
+sample(withReplacement, fraction, seed): Samples a fraction of data from the RDD with or without replacement.
+mapValues(func): Applies a function to the values of each key-value pair in a PairRDD, while retaining the original keys.
+flatMapValues(func): Similar to flatMap, but operates on key-value pairs and can produce 0 or more output pairs for each input pair.
+Wide Transformations:
+
+groupByKey(): Groups the values of each key in a PairRDD into a single sequence.
+reduceByKey(func): Aggregates the values of each key using a specified function.
+combineByKey(createCombiner, mergeValue, mergeCombiners): Similar to reduceByKey, but allows for more flexibility in the output format.
+foldByKey(zeroValue, func): Similar to reduceByKey, but with an additional initial zero value.
+aggregateByKey(zeroValue, seqFunc, combFunc): Similar to combineByKey, but with the ability to specify separate aggregation functions for combining values within a partition and across partitions.
+sortByKey(ascending): Sorts the elements of a PairRDD by key.
+
 ## Now Popular spark context (sc) operations 
 
 ### SC is having lot of method inbuild -- here is some list 
