@@ -102,3 +102,8 @@ These deploy-mode options provide flexibility in how Spark applications are depl
 ### Deep Internal process of running jobs in spark 
 
 <img src="sparkjob.png">
+
+## WHy to use spark SQl 
+
+<img src="sql1.png">
+
