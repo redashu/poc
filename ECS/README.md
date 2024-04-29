@@ -33,4 +33,15 @@ A task definition is a blueprint for your application. It is a text file in JSON
 - Any data volumes that are used with the containers in the task
 - The IAM role that your tasks use
 
+## More things you need to know about Task definition
+
+<img src="images/taskdef.jpeg">
+
+### A visual look to task definition 
+
+<img src="images/taskdef2.jpeg">
+
+## Running a task from Task Definition 
+
+
 
