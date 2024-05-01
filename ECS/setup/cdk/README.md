@@ -97,7 +97,26 @@ arn:aws:cloudformation:us-east-1:751136288263:stack/AwsEcsStack/70e8fdd0-078f-11
 
 
 ```
+## -- CDK --Deploy what is does 
 
+- It generate Cloudformation template under a folder called cdk.out 
+- From ckd.out folder it deploy the resources 
 
+### If we only want to generate CF template in cdk.out folder but don't wanna deploy
 
+```
+cdk synth 
 
+===>>
+Resources:
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+```
+
+## to remove resources using CDK 
+
+```
+cdk destroy 
+```
+### note: if your code have condition with aws resources in deletion then you have to check
+- like for s3 if you have not set removalpolicy then it will not delete bucket 
