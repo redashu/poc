@@ -86,10 +86,16 @@ resource "azurerm_linux_virtual_machine" "example" {
     "hello" = "ashu"
   }
   provisioner "remote-exec" {
+    connection {
+      host        = self.public_ip_address
+      user        = self.admin_username
+      private_key = file("~/.ssh/id_rsa")  # Path to your private SSH key
+    }
     inline = [ 
         "sudo apt update",
         "sudo apt install git vim -y"
      ]
+
     
   }
 }
