@@ -132,3 +132,4 @@ resource "azurerm_linux_virtual_machine" "main-ashuvm" {
   }
 }
 
+# store ip 
