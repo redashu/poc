@@ -1,4 +1,4 @@
-# Splunk Overview ![Splunk Logo](https://www.splunk.com/content/dam/splunk-blogs/images/2020/10/splunk-logo.png)
+# Splunk Overview ![Splunk Logo](https://upload.wikimedia.org/wikipedia/commons/f/f8/Splunk_logo.png)
 
 ## 🔍 Basic Usage
 
