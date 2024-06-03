@@ -1,4 +1,6 @@
-# Splunk Overview ![Splunk Logo](https://upload.wikimedia.org/wikipedia/commons/f/f8/Splunk_logo.png)
+![Splunk Logo](https://upload.wikimedia.org/wikipedia/commons/f/f8/Splunk_logo.png)
+
+# Splunk Overview
 
 ## 🔍 Basic Usage
 
