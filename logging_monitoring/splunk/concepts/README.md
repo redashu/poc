@@ -8,6 +8,55 @@
 
 <img src="splunk_use.png">
 
+## Splunk Architecture 
+
+<img src="arch1.png">
+
+
+# Splunk Components
+
+## 1. Forwarders
+- **Description**: Forwarders collect data from various sources and send it to the indexers.
+  - **Universal Forwarders (UF)**: Lightweight and efficient for most data collection tasks.
+  - **Heavy Forwarders (HF)**: Capable of parsing and indexing data before forwarding.
+
+## 2. Indexers
+- **Description**: Store and index data received from forwarders, transforming raw data into searchable events.
+- **Functions**: Indexing, searching, and managing indexed data.
+
+## 3. Search Heads
+- **Description**: Allow users to search, analyze, and visualize data stored in the indexers.
+- **Functions**: Query processing, result aggregation, and user interface for searching and reporting.
+
+## 4. Deployment Server
+- **Description**: Manages configurations and app deployments to multiple Splunk instances.
+- **Functions**: Centralized configuration management and app deployment.
+
+## 5. License Manager
+- **Description**: Oversees Splunk license usage and ensures compliance with the purchased license volume.
+- **Functions**: Monitoring and managing license usage.
+
+## 6. Cluster Master (Cluster Manager)
+- **Description**: Manages indexer clusters, ensuring data availability and recovery.
+- **Functions**: Managing indexer cluster configurations, monitoring cluster health, and ensuring data replication.
+
+## 7. Deployer
+- **Description**: Distributes apps and configurations to search head clusters.
+- **Functions**: Managing and deploying configurations across search head clusters.
+
+## 8. Monitoring Console (MC)
+- **Description**: Provides tools for monitoring and managing the health of Splunk deployments.
+- **Functions**: Monitoring system health, performance metrics, and alerting on issues.
+
+## 9. KV Store
+- **Description**: A key-value store for storing and retrieving data as key-value pairs.
+- **Functions**: Storage and retrieval of structured data.
+
+## 10. Apps and Add-ons
+- **Description**: Extend the functionality of Splunk for specific use cases, data sources, and integrations.
+- **Functions**: Providing additional features, data inputs, and visualizations.
+
+
 ## Deployment models :- Mainly below 4 models are popularly used 
 
 ### Splunk deployment generally classified into four major types 
@@ -62,4 +111,7 @@
 - **Search Head Clustering**
   - **Description**: Multiple search heads are grouped to provide high availability and load balancing for search requests. Search head clusters share the search workload and provide a unified view of search results.
   - **Use Case**: Environments with high search loads that need search request load balancing and high availability.
+
+
+
 
