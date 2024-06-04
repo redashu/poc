@@ -4,6 +4,10 @@
 
 <img src="splunk_data.png">
 
+## No matter how take it but splunk in general serving these 3 purpose 
+
+<img src="splunk_use.png">
+
 ## Deployment models :- Mainly below 4 models are popularly used 
 
 ### Splunk deployment generally classified into four major types 
