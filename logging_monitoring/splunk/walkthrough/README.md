@@ -65,3 +65,14 @@ Please confirm new password:
 ```
 
 ## Now you can access it using 8000 port 
+
+## Data pipeline in splunk 
+
+-- Understanding from data input to splunk search 
+
+<img src="data2s.png">
+
+-- A better and more technical view 
+
+<img src="techv.png">
+
