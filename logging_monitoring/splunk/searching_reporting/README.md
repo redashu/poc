@@ -16,3 +16,12 @@
 
 
 
+## Knowledge Objects {KO's}
+
+### Examples 
+
+-- Getting an alert when i get 30 sales on my website is KO 
+-- Getting an alert when a user is loggined on my website is an example of KO
+
+<img src="ko.png">
+
