@@ -2,6 +2,31 @@
 
 # Splunk Searching and Reporting Overview
 
+## Introduction to Search 
+- splunk uses SPL to search into indexed data
+
+<img src="spl.png">
+
+## Key Features of SPL
+
+### 1. Search Commands
+- **Basic Search**: The most fundamental command used to retrieve events from the index.
+  ```spl
+  index=_internal error
+  index=web sourcetype=access_combined | rex "user=(?<user>\w+)"
+  index=web status=200 | where bytes > 1000
+  index=web | fields host, status, bytes
+  index=web | stats count by status
+  index=web | chart count by status
+  index=web | timechart count by status
+  index=web | bucket _time span=1h | stats count by _time
+  index=web | transaction session_id
+  index=web | eventstats avg(bytes) as avg_bytes
+  index=web | lookup user_lookup user OUTPUT user_fullname
+```
+
+
+
 ### searching all the indexes 
 
 <img src="allindex.png">
