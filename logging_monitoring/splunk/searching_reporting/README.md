@@ -11,7 +11,7 @@
 
 ### 1. Search Commands
 - **Basic Search**: The most fundamental command used to retrieve events from the index.
-  ```spl
+
   index=_internal error
   index=web sourcetype=access_combined | rex "user=(?<user>\w+)"
   index=web status=200 | where bytes > 1000
@@ -23,7 +23,6 @@
   index=web | transaction session_id
   index=web | eventstats avg(bytes) as avg_bytes
   index=web | lookup user_lookup user OUTPUT user_fullname
-```
 
 
 
