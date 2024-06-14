@@ -186,3 +186,15 @@ maxDataSize = auto_high_volume
 maxHotBuckets = 10
 maxWarmDBCount = 300
 frozenTimePeriodInSecs = 7776000  # 90 days
+
+## final summary of buckets 
+
+## Bucket Types in Splunk
+
+| Bucket Type | Searchable | Description                                     |
+|-------------|------------|-------------------------------------------------|
+| **Hot**     | Yes        | Actively written to, contains recent data       |
+| **Warm**    | Yes        | Recently indexed data, no longer written to     |
+| **Cold**    | Yes        | Older data, stored on less expensive storage    |
+| **Frozen**  | No         | Archived data, not accessible unless restored   |
+| **Thawed**  | Yes        | Archived data restored for searching            |
