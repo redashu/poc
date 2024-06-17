@@ -39,6 +39,12 @@
 
 <img src="wild.png">
 
+### search and creating table 
+
+<img src="table1.png">
+
+
+
 
 
 ## Knowledge Objects {KO's}
