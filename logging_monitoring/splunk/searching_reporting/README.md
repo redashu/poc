@@ -39,10 +39,15 @@
 
 <img src="wild.png">
 
-### search and creating table 
+### counting uniq ip address using stats
 
 <img src="table1.png">
 
+### counting number of events in particular index 
+
+```
+source="MOCK_DATA.csv" host="DESKTOP-52F5653" index="findmore" sourcetype="csv" | stats count
+```
 
 
 

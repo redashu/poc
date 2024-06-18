@@ -24,7 +24,7 @@
 ### Getting RPM linux after login 
 
 ```
- wget -O splunk-9.2.1-78803f08aabb.x86_64.rpm "https://download.splunk.com/products/splunk/releases/9.2.1/linux/splunk-9.2.1-78803f08aabb.x86_64.rpm"
+ wget -O splunk-9.2.1-78803f08aabb.x86_64.rpm "https://splunk/releases/9.2.1/linux/"
 ```
 
 ### Installing it 
@@ -76,3 +76,34 @@ Please confirm new password:
 
 <img src="techv.png">
 
+## Setup universal forwarder in splunk on ubuntu linux 
+
+### Downloading dpkg file 
+
+```
+wget -O splunkforwarder-9.2.1-78803f08aabb-linux-2.6-amd64.deb "https://download.splunk.com/products/universalforwarder/releases/9.2.1"
+```
+
+### installing splunk forwarder 
+
+```
+dpkg -i splunkforwarder-9.2.1-78803f08aabb-linux-2.6-amd64.deb 
+Selecting previously unselected package splunkforwarder.
+(Reading database ... 58969 files and directories currently installed.)
+Preparing to unpack splunkforwarder-9.2.1-78803f08aabb-linux-2.6-amd64.deb ...
+Unpacking splunkforwarder (9.2.1+78803f08aabb) ...
+Setting up splunkforwarder (9.2.1+78803f08aabb) ...
+complete
+
+```
+
+### verify installation 
+
+```
+ cd /opt/splunkforwarder/
+root@splunk-linux-forwarder:/opt/splunkforwarder# ls
+README-splunk.txt  cmake          etc  include  license-eula.txt  share                                                         swidtag
+bin                copyright.txt  ftr  lib      openssl           splunkforwarder-9.2.1-78803f08aabb-linux-2.6-x86_64-manifest  uf
+```
+
+### 
