@@ -106,4 +106,18 @@ README-splunk.txt  cmake          etc  include  license-eula.txt  share         
 bin                copyright.txt  ftr  lib      openssl           splunkforwarder-9.2.1-78803f08aabb-linux-2.6-x86_64-manifest  uf
 ```
 
-### 
+### start splunk forwarder service 
+
+```
+splunk enable boot-start
+splunk start --accept-license
+
+```
+
+### adding splunk -server details
+
+```
+/opt/splunkforwarder/bin/splunk add forward-server  13.126.99.90:9997 
+/opt/splunkforwarder/bin/splunk add monitor  /var  -index ubuntu
+```
+
