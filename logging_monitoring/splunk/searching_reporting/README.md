@@ -148,6 +148,12 @@ index="security" | timechart span=1m count | where count>2000
 
 
 
+# Creating Reports 
+
+- to run commnads in a combo
+- we get an options for running it at scheduled times 
+- it can send alerts 
+
 ## Knowledge Objects {KO's}
 
 ### Examples 
