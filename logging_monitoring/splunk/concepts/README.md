@@ -198,3 +198,7 @@ frozenTimePeriodInSecs = 7776000  # 90 days
 | **Cold**    | Yes        | Older data, stored on less expensive storage    |
 | **Frozen**  | No         | Archived data, not accessible unless restored   |
 | **Thawed**  | Yes        | Archived data restored for searching            |
+
+## Add-ons / applications 
+
+- need to be installed on search Head or in single deployment instances

@@ -49,6 +49,102 @@
 source="MOCK_DATA.csv" host="DESKTOP-52F5653" index="findmore" sourcetype="csv" | stats count
 ```
 
+### using OR , AND 
+
+```
+index="security" OR index="webapp"  host=web1 AND process=sshd
+```
+
+### explanation 
+
+- OR will be used in first 2 keywords like in indexes 
+- AND will be used in last 2 keywords like host and process
+
+### printing uniq host count 
+
+```
+(index="security" OR index="webapp")   AND process=sshd | stats dc(host)
+```
+
+### printing uniq host name 
+
+```
+(index="security" OR index="webapp")   AND process=sshd | stats count by host
+```
+
+## printing values of all different host along with count 
+
+```
+(index="security" OR index="webapp")   AND process=sshd | stats values(host) dc(host)
+```
+
+### using Alias to rename column in above example 
+
+<img src="alias.png">
+
+### searching for oldest and newest time 
+
+```
+(index="security" OR index="webapp")   AND process=sshd | stats first(_time) , last(_time)
+
+```
+
+## Some specific commands in SPL 
+
+### top/rare 
+- they oposite to each other 
+- to see most occuring items use top 
+- to see least occuring items use rare 
+
+### most frequently occuring processes
+
+```
+(index="security" OR index="webapp")  | top limit=10 process
+
+```
+### least occuring processes
+
+```
+(index="security" OR index="webapp")  | rare limit=4 process
+```
+
+
+### view 
+
+<img src="top.png">
+
+## search / where command 
+
+### Note: by default splunk is using search commnad 
+
+```
+search (index="security" OR index="webapp")  | stats count by host 
+```
+
+### printing uniq host which has occured more than 23000 times 
+
+```
+(index="security" OR index="webapp")  | stats count by host | where count>23000
+```
+
+## Timechart 
+- in time chart time is always going to be in any of axis like either x or y
+
+```
+index="security" | timechart count
+```
+
+### events that happened more than 4000 times 
+
+```
+index="security" | timechart count | where count>4000
+```
+
+### check in span of 1 minute
+
+```
+index="security" | timechart span=1m count | where count>2000
+```
 
 
 
