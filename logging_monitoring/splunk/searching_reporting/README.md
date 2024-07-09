@@ -146,7 +146,47 @@ index="security" | timechart count | where count>4000
 index="security" | timechart span=1m count | where count>2000
 ```
 
+# Regex 
 
+### Understanding Regex token 
+
+<img src="token.png">
+
+## Using regex to find 200 range status code in raw logs 
+
+```
+index="main" sourcetype="access_log-too_small" | regex _raw="\b(200|201|202|203|204)\b"
+```
+### matching and printing ip address
+
+```
+index="main" | rex field=_raw "^(?P<userIP>[^ ]+)" | table userIP
+```
+
+### another example 
+
+```
+index="main" | rex field=_raw "^(?<ip_address>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" | stats count by ip_address | rename count as "Count of Events"
+```
+
+### find those IP tried to access 400 range http status code
+
+```
+index="main" | regex _raw="\s4\d{2}\s" |  rex field=_raw "^(?<ip_address>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" | stats count by ip_address | rename count as "Count of Events"
+```
+### client ip with page and count 
+
+```
+index="main" | regex _raw="\s4\d{2}\s" | rex field=_raw "^(?<clientIP>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - - \[\d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2} [+-]\d{4}\] \"GET (?<page>.*?) HTTP/\d\.\d\"" | stats count by clientIP, page | rename count as access_count | sort - access_count
+```
+### OR 
+
+```
+index="main" | regex _raw="\s4\d{2}\s" | rex field=_raw "^(?<clientIP>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - - .* \"GET (?<page>.*?) HTTP/\d\.\d\"" | stats count by clientIP, page | rename count as access_count | sort - access_count
+```
+
+==> output 
+<img src="output.png">
 
 # Creating Reports 
 
