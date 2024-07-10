@@ -36,6 +36,15 @@ SonarQube can be installed on your local machine or deployed on a server. The in
 
 <img src="download.png">
 
+### Deploy using docker compose 
+- * make sure you have increased the limits
+  * max file opened also
+```
+sysctl -w vm.max_map_count=524288
+sysctl -w fs.file-max=131072
+```
+
+### Note: default user and password is admin / admin 
 ## How to scan a code with sonar 
 
 ```
